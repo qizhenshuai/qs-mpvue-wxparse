@@ -54,7 +54,11 @@ export default {
         }
       }
       const imageHeightStyle = mode === 'widthFix' ? '' : `height: ${computeHeight ? computeHeight : imageheight}px;`;
-      this.newStyleStr = `${imageHeightStyle}; width: ${hasWidth ? hasWidth : imageWidth}px; ${styleStr}; padding: 0 ${+padding}px; margin: 0 auto; display: block;`;
+      if (hasWidth > 0 && hasWidth < imageWidth) {
+        this.newStyleStr = `${styleStr}; ${imageHeightStyle}; padding: 0 ${+padding}px; margin: 0 auto; display: block;`;
+      } else if (hasWidth == 0 || hasWidth >= imageWidth) {
+        this.newStyleStr = `${styleStr}; ${imageHeightStyle}; width: ${hasWidth ? hasWidth : imageWidth}px; padding: 0 ${+padding}px; margin: 0 auto; display: block;`;
+      }
     },
     // 计算视觉优先的图片宽高
     wxAutoImageCal(originalWidth, originalHeight) {
