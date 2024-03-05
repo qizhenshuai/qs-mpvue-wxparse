@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/qizhenshuai/qs-mpvue-wxParse#readme",
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^10.1.0",
     "eslint": "^8.39.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-friendly-formatter": "^4.0.1",
